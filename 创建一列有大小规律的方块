@@ -1,0 +1,12 @@
+import bpy
+
+c = bpy.context
+d = bpy.data
+
+for i in range(30):
+    bpy.ops.mesh.primitive_cube_add(location = [ i*3,i,i])
+    obj = c.active_object
+    if i%4 == 0:
+        obj.scale = [3,]*3
+        
+print("----" * 10)
